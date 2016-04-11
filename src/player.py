@@ -131,7 +131,9 @@ class Player(pygame.sprite.Sprite):
         
 
     def shoot(self):
-        #propels a bullet object forward, sets a cooldown and drains ammo
+        '''
+        propels a bullet object forward, sets a cooldown and drains ammo
+        '''
         if not self.cooldown and self.ammo > 0:
             projectile = bullets.Bullet(self)
             self.bullet_list.append(projectile)
@@ -176,4 +178,7 @@ class Player(pygame.sprite.Sprite):
             self.ammo = min(self.ammo + 5, MAX_AMMO)
 
     def pointgain(self, value):
+        '''
+        adds to the score with the given value in
+        '''
         self.score += value

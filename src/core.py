@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+import pstats as pstats
+import cProfile as profile
 import pygame
 from config import *
 import player
@@ -12,6 +14,9 @@ from scoreboard import *
 
 
 class Game:
+    '''
+    the core of the game, handles everything that the objects themselves dont
+    '''
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('Mayhem by ahe103')
@@ -30,11 +35,15 @@ class Game:
 
 
     def runtime(self):
+        '''
+        the brains of the game, runs in an infinite while loop. 
+        interrupted by Escape or clicking the close button
+        '''
         #start the game
         #set up the lists
         self.startup()
         while True:
-            
+
             self.screen.blit(self.background, (0,0))
             #handle any events
             self.eventhandler()
@@ -62,7 +71,9 @@ class Game:
 
 
     def eventhandler(self):
-    #handles any keyboard inputs or other somesuch
+        '''
+        handles any keyboard inputs or other somesuch
+        '''
         for event in pygame.event.get():
             self.keys = pygame.key.get_pressed()
             if event.type == pygame.QUIT:
@@ -225,4 +236,6 @@ class Game:
 
 if __name__ == "__main__":
     test = Game()
-    test.runtime()
+    profile.run("test.runtime()", "cProfile.txt")
+    p = pstats.Stats('cProfile.txt')
+    p.sort_stats('tottime').print_stats(20)
