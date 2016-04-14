@@ -43,7 +43,7 @@ class Player(pygame.sprite.Sprite):
         self.thrust_flag = False
         self.restart = False
 
-        self.bullet_list = []
+        self.bullet_list = pygame.sprite.Group()
 
 
     def handle(self, list_o_keys):
@@ -99,14 +99,12 @@ class Player(pygame.sprite.Sprite):
         angle = math.degrees(math.atan2(-self.direction.y, self.direction.x))
         #static function for rotating
         self.image = pygame.transform.rotate(self.original, angle)
-        self.shipimage = self.image
         self.mask = pygame.transform.rotate(self.original, angle)
         self.rect = self.image.get_rect(center=self.rect.center) 
         if self.thrust_flag:
             '''
             excerts thrust upon the ship
             '''
-
             #animates the thruster
             #keeps the center of the ship, 
             #makes a new surface and mask
@@ -136,7 +134,7 @@ class Player(pygame.sprite.Sprite):
         '''
         if not self.cooldown and self.ammo > 0:
             projectile = bullets.Bullet(self)
-            self.bullet_list.append(projectile)
+            self.bullet_list.add(projectile)
             self.groups()[0].add(projectile)
             self.cooldown = 5
             self.ammo -= 1
@@ -156,7 +154,7 @@ class Player(pygame.sprite.Sprite):
                 self.speed = self.speed.normalized() * SPEEDLIMIT
                 if not self.invuln:
                     self.shield -= 1
-                    self.invuln += 20
+                    self.invuln += INVULNVAL
             if self.shield == 0:
                 self.kill()
 

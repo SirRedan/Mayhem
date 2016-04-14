@@ -87,7 +87,8 @@ class Vector2D(object):
         return Vector2D(newx, newy)
         
 def intersect_rectangle_circle(rec_pos, sx, sy, circle_pos, circle_radius, circle_speed):
-    """ Determine if a rectangle and a circle intersects.
+    """ 
+    Determine if a rectangle and a circle intersects.
     
     Only works for a rectangle aligned with the axes.
     

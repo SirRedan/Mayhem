@@ -33,6 +33,5 @@ class Bullet(pygame.sprite.Sprite):
         how to act when hitting anything
         '''
         self.kill()
-        self.owner.bullet_list.remove(self)
 
 

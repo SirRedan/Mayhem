@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 import pstats as pstats
 import cProfile as profile
 import pygame
@@ -64,10 +63,10 @@ class Game:
             self.all_sprites.draw(self.screen)
             #keeps the scoreboard up to date
             self.sboard.update(self.player1, self.player2)
-            #keep framerate
-            self.timer.tick(FPS)
             #refresh the screen
             pygame.display.flip()
+            #keep framerate
+            self.timer.tick(FPS)
 
 
     def eventhandler(self):
@@ -186,11 +185,12 @@ class Game:
                             self.resolist.append(reso)                          #add the resource to current resources
                             self.all_sprites.add(reso)                          #add it to the spritepool
                         
-                #if shot.rect.colliderect(self.player2.rect):
-                    #if pygame.sprite.collide_mask(shot, self.player2):         #bullet-player collision is faulty resulting in crash
-                        #collide = (self.player2.pos-shot.pos).normalized()*(-1)
-                        #shot.hit()
-                        #self.player1.hit(collide)
+                if shot.rect.colliderect(self.player2.rect):
+                    if pygame.sprite.collide_mask(shot, self.player2):          #bullet-player collision is faulty resulting in crash
+                        collide = (self.player2.pos-shot.pos).normalized()*(-1)
+                        shot.hit()
+                        self.player2.hit(collide)
+                        self.player1.pointgain(PLAYERHIT)
 
         for shot in self.player2.bullet_list:                                   #same as above only for player 2
             for roid in self.asteroids:
@@ -204,11 +204,12 @@ class Game:
                             self.resolist.append(reso)
                             self.all_sprites.add(reso)
 
-                #if shot.rect.colliderect(self.player2.rect):
-                    #if pygame.sprite.collide_mask(roid, self.player1):
-                        #collide = (self.player2.pos-shot.pos).normalized()*(-1)
-                        #shot.hit() 
-                        #self.player2.hit(collide)
+                if shot.rect.colliderect(self.player1.rect):
+                    if pygame.sprite.collide_mask(shot, self.player1):
+                        collide = (self.player1.pos-shot.pos).normalized()*(-1)
+                        shot.hit() 
+                        self.player1.hit(collide)
+                        self.player2.pointgain(PLAYERHIT)
 
 
         if self.player1.rect.colliderect(self.player2.rect):                    #player-player collision
@@ -236,6 +237,8 @@ class Game:
 
 if __name__ == "__main__":
     test = Game()
+    #test.runtime()
     profile.run("test.runtime()", "cProfile.txt")
     p = pstats.Stats('cProfile.txt')
-    p.sort_stats('tottime').print_stats(20)
+    p.sort_stats('ncalls').print_stats(10)
+    p.sort_stats('cumtime').print_stats(10)

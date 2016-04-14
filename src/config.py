@@ -36,11 +36,13 @@ ASTEROIDMAXSPD  = 5
 #point modifiers
 ASTEROIDSHOT    = 10
 ITEMPICKUP      = 50
+PLAYERHIT       = 200
 
 #Max limits for ship stats
 MAX_AMMO        = 50
 MAX_FUEL        = 1000
 MAX_SHIELD      = 10
+INVULNVAL       = 30
 
 #wishes for framerate 
-FPS             = 60
+FPS             = 144
