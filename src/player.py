@@ -29,11 +29,11 @@ class Player(pygame.sprite.Sprite):
         #cooldowwn for firing bullets
         self.cooldown = 0
         #amount of shield
-        self.shield = 10
+        self.shield = MAX_SHIELD
         #amount of ammo
-        self.ammo = 50
+        self.ammo = MAX_AMMO
         #amount of fuel
-        self.fuel = 1000
+        self.fuel = MAX_FUEL
         #score counter
         self.score = 0
         #invulnerability frame counter

@@ -1,0 +1,39 @@
+Tue Apr 12 08:21:50 2016    cProfile.txt
+
+         189672 function calls in 31.097 seconds
+
+   Ordered by: call count
+   List reduced from 107 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    28773    0.009    0.000    0.009    0.000 /src/Vector2D.py:21(__init__)
+    23607    0.003    0.000    0.003    0.000 {method 'colliderect' of 'pygame.Rect' objects}
+    14468    0.015    0.000    0.019    0.000 /src/Vector2D.py:32(__add__)
+    12472   27.846    0.002   27.846    0.002 {method 'blit' of 'pygame.Surface' objects}
+     8994    0.006    0.000    0.006    0.000 {method 'get_rect' of 'pygame.Surface' objects}
+     7900    0.001    0.000    0.001    0.000 {built-in method len}
+     5193    0.007    0.000    0.009    0.000 /src/Vector2D.py:40(__mul__)
+     5175    0.011    0.000    0.012    0.000 /src/Vector2D.py:66(magnitude)
+     5175    0.001    0.000    0.001    0.000 {built-in method sqrt}
+     4728    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+
+
+Tue Apr 12 08:21:50 2016    cProfile.txt
+
+         189672 function calls in 31.097 seconds
+
+   Ordered by: internal time
+   List reduced from 107 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    12472   27.846    0.002   27.846    0.002 {method 'blit' of 'pygame.Surface' objects}
+      419    1.126    0.003    1.126    0.003 {built-in method flip}
+      622    0.572    0.001    0.572    0.001 {method 'fill' of 'pygame.Surface' objects}
+      419    0.369    0.001    1.268    0.003 /src/scoreboard.py:14(update)
+       15    0.213    0.014    0.213    0.014 {built-in method load_extended}
+      783    0.202    0.000    0.202    0.000 {method 'convert_alpha' of 'pygame.Surface' objects}
+     2456    0.123    0.000    0.123    0.000 {built-in method rotate}
+     3550    0.110    0.000    0.110    0.000 {built-in method scale}
+     2349    0.099    0.000    0.099    0.000 {built-in method from_surface}
+     3352    0.048    0.000    0.048    0.000 {method 'render' of 'pygame.font.Font' objects}
+

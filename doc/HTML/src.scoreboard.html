@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module scoreboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>scoreboard</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/ahe/Documents/inf1400-ahe103-3/src/scoreboard.py">/home/ahe/Documents/inf1400-ahe103-3/src/scoreboard.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="scoreboard.html#Scoreboard">Scoreboard</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Scoreboard">class <strong>Scoreboard</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>creates&nbsp;the&nbsp;scoreboard&nbsp;that&nbsp;is&nbsp;displayed&nbsp;at&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;screen<br>
+displaying&nbsp;the&nbsp;players&nbsp;remaining&nbsp;shield,&nbsp;ammo,&nbsp;fuel&nbsp;and&nbsp;score<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Scoreboard-__init__"><strong>__init__</strong></a>(self, gamescreen, font)</dt></dl>
+
+<dl><dt><a name="Scoreboard-blittext"><strong>blittext</strong></a>(self, p1, p2)</dt><dd><tt>blits&nbsp;the&nbsp;scoretext&nbsp;upon&nbsp;the&nbsp;scoreboard</tt></dd></dl>
+
+<dl><dt><a name="Scoreboard-update"><strong>update</strong></a>(self, p1, p2)</dt><dd><tt>updates&nbsp;the&nbsp;scoreboard&nbsp;below&nbsp;the&nbsp;playarea</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ACCELERATION</strong> = 3<br>
+<strong>ASTEROIDMAXSPD</strong> = 5<br>
+<strong>ASTEROIDNUM</strong> = 10<br>
+<strong>ASTEROIDSHOT</strong> = 10<br>
+<strong>BULLETASPECT</strong> = (25, 25)<br>
+<strong>BULLETSPEED</strong> = 30<br>
+<strong>DROPASPECT</strong> = (30, 30)<br>
+<strong>FPS</strong> = 144<br>
+<strong>GRAVITYFACTOR</strong> = Vector(X: -1, Y: 0)<br>
+<strong>INVULNVAL</strong> = 30<br>
+<strong>ITEMPICKUP</strong> = 50<br>
+<strong>MAX_AMMO</strong> = 50<br>
+<strong>MAX_FUEL</strong> = 1000<br>
+<strong>MAX_SHIELD</strong> = 10<br>
+<strong>PLAYERHIT</strong> = 200<br>
+<strong>PLAYSCREEN</strong> = &lt;rect(0, 0, 1366, 768)&gt;<br>
+<strong>PLAYSCREEN_X</strong> = 1366<br>
+<strong>PLAYSCREEN_Y</strong> = 768<br>
+<strong>SCORESCREEN_Y</strong> = 598<br>
+<strong>SCREENBUFFER</strong> = 100<br>
+<strong>SCREEN_X</strong> = 1366<br>
+<strong>SCREEN_Y</strong> = 1366<br>
+<strong>SHIPANDTHRUST</strong> = (196, 178)<br>
+<strong>SHIPP1</strong> = ['images/ships/ship1.png', 'images/ships/ship2.png', 'images/ships/ship3.png']<br>
+<strong>SHIPP2</strong> = ['images/ships/ship4.png', 'images/ships/ship5.png', 'images/ships/ship6.png']<br>
+<strong>SMALLASPECTSHIP</strong> = (50, 50)<br>
+<strong>SPEEDLIMIT</strong> = 10</td></tr></table>
+</body></html>

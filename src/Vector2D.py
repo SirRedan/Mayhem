@@ -81,6 +81,7 @@ class Vector2D(object):
         return Vector2D(self.x, self.y)
     
     def rotate (self, theta):
+        ''' Returns a new vector rotated by theta degrees'''
         cos_theta, sin_theta = math.cos(math.radians(theta)), math.sin(math.radians(theta))
         newx = round(self.x * cos_theta - self.y * sin_theta, 6)
         newy = round(self.x * sin_theta + self.y * cos_theta, 6)
